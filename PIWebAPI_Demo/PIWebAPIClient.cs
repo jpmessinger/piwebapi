@@ -17,6 +17,9 @@ namespace PIWebAPI_Demo
             client = new HttpClient();
             string authInfo = Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", userName, password)));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authInfo);
+
+            // Just to show we can control cache access, lets add a Cache-Control header. It will slow things down a little though...
+            //client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue() { NoCache = true };
             client.Timeout = new TimeSpan(0, 0, 20);
 
             /* This next line is needed to handle errors returned when using a self-signed certificate
@@ -36,7 +39,7 @@ namespace PIWebAPI_Demo
             return JObject.Parse(content);
         }
 
-        public async Task<JObject> PostAsync(string uri, HttpContent httpContent)
+        public async Task<HttpResponseMessage> PostAsync(string uri, HttpContent httpContent)
         {
             HttpResponseMessage response = await client.PostAsync(uri, httpContent);
             string content = await response.Content.ReadAsStringAsync();
@@ -45,10 +48,10 @@ namespace PIWebAPI_Demo
                 var responseMessage = "Response status code does not indicate success: " + (int)response.StatusCode;
                 throw new HttpRequestException(response + Environment.NewLine + content);
             }
-            return JObject.Parse(content);
+            return response;
         }
 
-        public async Task<JObject> PutAsync(string uri, HttpContent httpContent)
+        public async Task<JObject> PutAsync(string uri, StringContent httpContent)
         {
             HttpResponseMessage response = await client.PutAsync(uri, httpContent);
             string content = await response.Content.ReadAsStringAsync();

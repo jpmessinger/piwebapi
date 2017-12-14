@@ -54,9 +54,16 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnRealtimeData = new System.Windows.Forms.Button();
             this.lvData = new System.Windows.Forms.ListView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtNewValue = new System.Windows.Forms.TextBox();
+            this.txtTimestamp = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -296,16 +303,73 @@
             // 
             this.lvData.Location = new System.Drawing.Point(368, 326);
             this.lvData.Name = "lvData";
-            this.lvData.Size = new System.Drawing.Size(447, 215);
+            this.lvData.Size = new System.Drawing.Size(447, 342);
             this.lvData.TabIndex = 43;
             this.lvData.UseCompatibleStateImageBehavior = false;
             this.lvData.View = System.Windows.Forms.View.Details;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtTimestamp);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.txtNewValue);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.btnUpdate);
+            this.groupBox4.Location = new System.Drawing.Point(15, 548);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(347, 120);
+            this.groupBox4.TabIndex = 44;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Update Data";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Value:";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(217, 19);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(113, 35);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Post Data";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // txtNewValue
+            // 
+            this.txtNewValue.Location = new System.Drawing.Point(10, 33);
+            this.txtNewValue.Name = "txtNewValue";
+            this.txtNewValue.Size = new System.Drawing.Size(100, 20);
+            this.txtNewValue.TabIndex = 4;
+            // 
+            // txtTimestamp
+            // 
+            this.txtTimestamp.Location = new System.Drawing.Point(10, 82);
+            this.txtTimestamp.Name = "txtTimestamp";
+            this.txtTimestamp.Size = new System.Drawing.Size(232, 20);
+            this.txtTimestamp.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(235, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Timestamp (Format: YYYY-MM-DDTHH:mm:ssZ)";
             // 
             // frmAttributeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 553);
+            this.ClientSize = new System.Drawing.Size(827, 680);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.lvData);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -334,6 +398,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +433,11 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnRealtimeData;
         private System.Windows.Forms.ListView lvData;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtTimestamp;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtNewValue;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

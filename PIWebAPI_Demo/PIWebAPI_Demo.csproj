@@ -78,7 +78,6 @@
       <DependentUpon>frmTagSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="PIPointListViewItem.cs" />
-    <Compile Include="PIWebAPIChannel.cs" />
     <Compile Include="PIWebAPIClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

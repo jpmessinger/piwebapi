@@ -23,15 +23,6 @@ namespace PIWebAPI_Demo
         {
             cboAFservers.Items.Clear();
             cboDAservers.Items.Clear();
-            cboStreamType.Items.Clear();
-            cboStreamType.Items.Add("GetInterpolated");
-            cboStreamType.Items.Add("GetInterpolatedAtTimes");
-            cboStreamType.Items.Add("GetPlot");
-            cboStreamType.Items.Add("GetRecorded");
-            cboStreamType.Items.Add("GetRecordedAtTime");
-            cboStreamType.Items.Add("GetSummary");
-            cboStreamType.Items.Add("GetValue");
-
         }
 
         private async void btnPIServers_Click(object sender, EventArgs e)
@@ -86,11 +77,6 @@ namespace PIWebAPI_Demo
         {
             var dlgAFSearch = new frmElementSearch();
             dlgAFSearch.ShowDialog();
-        }
-
-        private void btnData_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAttrSearch_Click(object sender, EventArgs e)
